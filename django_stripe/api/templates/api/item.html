@@ -1,5 +1,7 @@
 {% include 'base.html' %}
 
 {% block body %}
-<h1>Item id: {{ item_id }}</h1>
+<h1>{{ item.name }}</h1>
+<p><b>Description:</b> {{ item.description }}</p>
+<p>Price: {{ item.price }}$</p>
 {% endblock %}
