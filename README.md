@@ -13,4 +13,4 @@ GET `127.0.0.1:8000/api/item/<int:item_id>`<br>
 GET `127.0.0.1:8000/api/buy/<int:item_id>`
 
 
-## .env file was removed from .gitignore intentionally so you dont have to waste your time to enter test_api_key values
+## .env file was removed from .gitignore intentionally so you don't have to waste your time to enter test_api_key values
