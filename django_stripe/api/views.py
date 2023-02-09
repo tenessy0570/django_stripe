@@ -8,5 +8,5 @@ from rest_framework.views import APIView
 
 class ItemView(APIView):
     def get(self, request: Request, item_id):
-        return Response(data={"ok": True, "item_id": item_id})
+        return render(request, 'api/item.html', context={"item_id": item_id})
 
