@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "django_stripe"
+version = "0.1.0"
+description = ""
+authors = ["tenessy0570 <tenessy0570@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+stripe = "^5.1.1"
+Django = "^4.1.6"
+djangorestframework = "^3.14.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
