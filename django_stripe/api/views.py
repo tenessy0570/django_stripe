@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Item
+from .utils import create_item_buy_session
 
 dotenv.load_dotenv()
 
@@ -46,21 +47,5 @@ class BuyView(APIView):
     def get(self, request, item_id):
         item = get_object_or_404(Item, id=item_id)
 
-        product = stripe.Product.create(name=item.name)
-        price = stripe.Price.create(
-            unit_amount=item.price * 100,  # From cents to dollars
-            currency="usd",
-            recurring=None,
-            product=product
-        )
-
-        session = stripe.checkout.session.Session.create(
-            success_url="https://vk.com",
-            mode="payment",
-            line_items=[
-                {
-                    "price": price,
-                    "quantity": 1
-                }
-            ])
+        session = create_item_buy_session(item)
         return Response(data={"session_id": session.id})
