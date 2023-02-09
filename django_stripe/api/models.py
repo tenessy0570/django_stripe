@@ -14,3 +14,6 @@ class Item(models.Model):
         blank=False
     )
     price = models.IntegerField(null=False, blank=False)
+
+    class Meta:
+        verbose_name = "Item"
