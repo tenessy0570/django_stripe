@@ -13,7 +13,7 @@ def create_item_buy_session(item: models.Item) -> stripe.checkout.Session:
     )
 
     session = stripe.checkout.session.Session.create(
-        success_url="https://vk.com",
+        success_url="https://vk.com",  # Whatever, didn't care a lot
         mode="payment",
         line_items=[
             {
